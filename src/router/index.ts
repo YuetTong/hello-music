@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: () => import("@/views/Home/Home.vue"),
+    component: () => import("@/views/home/index.vue"),
     alias: '/home',
     meta: {
       title: '首页'
