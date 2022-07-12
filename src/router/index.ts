@@ -24,16 +24,15 @@ const routes: Array<RouteRecordRaw> = [
       title: '登录'
     }
   },
-  {
-    path: '/demo',
-    name: 'demo',
-    component: () => import("@/views/demo/index.vue"),
-    alias: '/demo',
-    meta: {
-      title: 'Demo'
-    }
-  },
-
+  // {
+  //   path: '/demo',
+  //   name: 'demo',
+  //   component: () => import("@/views/demo/index.vue"),
+  //   alias: '/demo',
+  //   meta: {
+  //     title: 'Demo'
+  //   }
+  // },
 ];
 const router = createRouter({
   history: createWebHashHistory(),
