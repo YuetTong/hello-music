@@ -7,14 +7,33 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/home'
   },
   {
-    path: '/',
-    name: 'home',
-    component: () => import("@/views/home/index.vue"),
-    alias: '/home',
+    path: '/register',
+    name: 'register',
+    component: () => import("@/views/register/index.vue"),
+    alias: '/register',
     meta: {
-      title: '首页'
+      title: '注册'
     }
   },
+  {
+    path: '/login',
+    name: 'home',
+    component: () => import("@/views/login/index.vue"),
+    alias: '/login',
+    meta: {
+      title: '登录'
+    }
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: () => import("@/views/demo/index.vue"),
+    alias: '/demo',
+    meta: {
+      title: 'Demo'
+    }
+  },
+
 ];
 const router = createRouter({
   history: createWebHashHistory(),
