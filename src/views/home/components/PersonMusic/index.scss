@@ -1,0 +1,20 @@
+.home {
+    margin-top: 40px;
+
+    .title {
+        display: flex;
+
+        .arrow-right {
+            width: 20px;
+            height: 20px;
+            background: url("../../../../assets/fonts/arrow-right.png") no-repeat;
+            background-size: cover;
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

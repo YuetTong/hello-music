@@ -2,8 +2,8 @@
   <!-- <input v-model="phoneNumber" placeholder="Phone Number" />
      <input v-model="pw" placeholder="Password" />
      <button @click="getLogin(phoneNumber, pw)">Login</button> -->
+
   <div class="login-page">
-    {{ formState.username }}
     <a-form
       :model="formState"
       name="basic"
@@ -18,7 +18,7 @@
         name="username"
         :rules="[{ required: true, message: 'Please input your username!' }]"
       >
-        <a-input v-model="formState.username" />
+        <a-input v-model:value="formState.username" />
       </a-form-item>
 
       <a-form-item
@@ -26,7 +26,7 @@
         name="password"
         :rules="[{ required: true, message: 'Please input your password!' }]"
       >
-        <a-input-password v-model="formState.password" />
+        <a-input-password v-model:value="formState.password" />
       </a-form-item>
 
       <a-form-item name="remember" :wrapper-col="{ offset: 8, span: 16 }">
@@ -34,7 +34,7 @@
       </a-form-item>
 
       <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
-        <a-button type="primary" html-type="submit">Submit</a-button>
+        <a-button type="primary" html-type="submit">Login</a-button>
       </a-form-item>
     </a-form>
   </div>
@@ -50,18 +50,16 @@ interface IAccount {
   remember?: boolean;
 }
 
-// const phoneNumber = ref(18578663406);
-// const pw = ref(123456);
-// const remember = ref(true);
 const initAccount: IAccount = {
-  username: "",
-  password: "",
+  username: "13802929226",
+  password: "123456",
   remember: true,
 };
 const formState = reactive({ ...initAccount });
 
 const onFinish = (values: any): void => {
   console.log("Success:", values);
+  getLogin(values.username, values.password);
 };
 
 const onFinishFailed = (errorInfo: String): any => {

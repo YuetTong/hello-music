@@ -7,6 +7,15 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/home'
   },
   {
+    path: '/home',
+    name: 'home',
+    component: () => import("@/views/home/index.vue"),
+    alias: '/home',
+    meta: {
+      title: 'home'
+    }
+  },
+  {
     path: '/register',
     name: 'register',
     component: () => import("@/views/register/index.vue"),
@@ -17,22 +26,22 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/login',
-    name: 'home',
+    name: 'login',
     component: () => import("@/views/login/index.vue"),
     alias: '/login',
     meta: {
       title: '登录'
     }
   },
-  // {
-  //   path: '/demo',
-  //   name: 'demo',
-  //   component: () => import("@/views/demo/index.vue"),
-  //   alias: '/demo',
-  //   meta: {
-  //     title: 'Demo'
-  //   }
-  // },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: () => import("@/views/demo/index.vue"),
+    alias: '/demo',
+    meta: {
+      title: 'Demo'
+    }
+  },
 ];
 const router = createRouter({
   history: createWebHashHistory(),
