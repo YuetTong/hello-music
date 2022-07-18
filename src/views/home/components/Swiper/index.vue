@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="swiper">
     <div>swiper</div>
     <swiper
       :slides-per-view="3"

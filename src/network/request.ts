@@ -113,8 +113,16 @@ export async function getBanner(type = 0) {
 export async function getPersonalized(limit = 30) {
   try {
     const res: any = await axios.get(`/personalized?limit=${limit}`);
-    console.log(res);
-    // return res.data.banners;
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getPrivateContent() {
+  try {
+    const res: any = await axios.get("/personalized/privatecontent");
+    return res.data;
   } catch (error) {
     console.error(error);
   }
