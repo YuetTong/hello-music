@@ -127,3 +127,13 @@ export async function getPrivateContent() {
     console.error(error);
   }
 }
+
+
+export async function getDjprogramt() {
+  try {
+    const res: any = await axios.get("/dj/recommend");
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
