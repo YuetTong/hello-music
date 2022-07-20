@@ -1,6 +1,5 @@
 <template>
   <div class="swiper">
-    <div>swiper</div>
     <swiper
       :slides-per-view="3"
       :space-between="50"
@@ -15,7 +14,6 @@
   </div>
 </template>
 <script setup lang="ts" scoped>
-import "./index.scss";
 import { ref, reactive } from "vue";
 import { getBanner } from "../../../../network/request";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -37,4 +35,5 @@ const onSlideChange = () => {
 
 init();
 </script>
-<style></style>
+<style scoped lang="scss" src="./index.scss">
+</style>

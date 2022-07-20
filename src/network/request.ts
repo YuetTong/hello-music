@@ -137,3 +137,13 @@ export async function getDjprogramt() {
     console.error(error);
   }
 }
+
+
+export async function getNewsong() {
+  try {
+    const res: any = await axios.get("/personalized/newsong");
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
