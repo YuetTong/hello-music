@@ -86,6 +86,7 @@ export async function getUpdate(...args) {
   try {
     const res: any = await axios.get(`/user/update?gender=${args[0].gender}&signature=${args[0].signature}
     &city=${args[0].city}&nickname=${args[0].nickname}&birthday=${args[0].birthday}&province=${args[0].province}`);
+    console.log(res);
   } catch (error) {
     console.error(error);
   }

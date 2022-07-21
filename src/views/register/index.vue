@@ -2,13 +2,25 @@
   <!-- <h2>我是首页{{ msg }}</h2>
   <h2> {{ count }}</h2> -->
   <h1>NetEase Register</h1>
-  <input v-model="phoneNumber" placeholder="Phone Number" />
-  <button @click="getCaptcha(phoneNumber)">Captcha</button>
+  <input
+    v-model="phoneNumber"
+    placeholder="Phone Number"
+  >
+  <button @click="getCaptcha(phoneNumber)">
+    Captcha
+  </button>
   <br>
-  <input v-model="captcha" placeholder="Verification code" />
-  <input v-model="pw" placeholder="Password" />
-  <button @click="getRegister(phoneNumber, pw, captcha)">Register</button>
-
+  <input
+    v-model="captcha"
+    placeholder="Verification code"
+  >
+  <input
+    v-model="pw"
+    placeholder="Password"
+  >
+  <button @click="getRegister(phoneNumber, pw, captcha)">
+    Register
+  </button>
 </template>
 
 <script setup lang="ts">

@@ -3,23 +3,26 @@
     <swiper
       :slides-per-view="3"
       :space-between="50"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
       class="swiper"
+      @swiper="onSwiper"
+      @slide-change="onSlideChange"
     >
-      <swiper-slide v-for="(slideContent, index) in state.banners" :key="index">
-        <img :src="slideContent.imageUrl" />
+      <swiper-slide
+        v-for="(slideContent, index) in state.banners"
+        :key="index"
+      >
+        <img :src="slideContent.imageUrl">
       </swiper-slide>
     </swiper>
   </div>
 </template>
 <script setup lang="ts" scoped>
-import { ref, reactive } from "vue";
-import { getBanner } from "../../../../network/request";
+import { reactive } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { getBanner } from "../../../../network/request";
 import "swiper/css";
 
-let state = reactive({ banners: [] });
+const state = reactive({ banners: [] });
 
 async function init() {
   state.banners = await getBanner();

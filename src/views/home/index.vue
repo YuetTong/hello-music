@@ -2,8 +2,8 @@
   <div class="home">
     <Swiper />
     <Card
-      class="first-section"
       v-if="showPersonalized"
+      class="first-section"
       :title="state.personlized.title"
       :list="state.personlized.personlizedList"
     />
@@ -29,7 +29,7 @@
 </template>
 <script setup lang="ts" scoped>
 import "./index.scss";
-import { ref, reactive, computed } from "vue";
+import { reactive, computed } from "vue";
 import Swiper from "./components/Swiper/index.vue";
 import Card from "./components/Card/index.vue";
 import TitleCard from "./components/TitleCard/index.vue";
@@ -42,7 +42,6 @@ import {
   getDjprogramt,
   getNewsong,
 } from "../../network/request";
-import { log } from "console";
 
 let state = reactive({
   privateContent: { privateContentList: [], title: "" },

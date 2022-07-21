@@ -2,16 +2,29 @@
   <div class="personalized">
     <div class="title">
       <p>{{ state.title }}</p>
-      <div class="arrow-right"></div>
+      <div class="arrow-right" />
     </div>
     <div class="container">
-      <div class="list-item" v-for="(item, index) in state.list" :key="index">
-        <img class="list-img" :src="item.picUrl" />
+      <div
+        v-for="(item, index) in state.list"
+        :key="index"
+        class="list-item"
+      >
+        <img
+          class="list-img"
+          :src="item.picUrl"
+        >
         <div class="info">
-          <div class="num">{{ index }}</div>
+          <div class="num">
+            {{ index }}
+          </div>
           <div class="musicInfo">
-            <div class="title">{{ item.somgName }}</div>
-            <div class="name">{{ item.artist }}</div>
+            <div class="title">
+              {{ item.somgName }}
+            </div>
+            <div class="name">
+              {{ item.artist }}
+            </div>
           </div>
         </div>
       </div>
@@ -19,10 +32,12 @@
   </div>
 </template>
 <script setup lang="ts" scoped>
-import { log } from "console";
-import { ref, reactive } from "vue";
+import { reactive } from "vue";
 const props = defineProps({
-  title: String,
+  title: {
+    type: String,
+    default: "",
+  },
   list: {
     type: Array,
     default: () => [],
@@ -32,8 +47,8 @@ const props = defineProps({
 function adjustSongList(data) {
   return data.map((item) => {
     const newData = {
-      songName: item.song.album.name,
-      artist: item.song.album.company,
+      songName: item.song.album.name || "",
+      artist: item.song.album.company || "",
       picUrl: item.picUrl,
     };
     return newData;
