@@ -2,6 +2,12 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import eslintPlugin from 'vite-plugin-eslint';
+import path from 'path';
+
+
+function resolvePath(paths) {
+  return path.resolve(__dirname, paths);
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,6 +15,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
+      '@views':resolvePath("./src/views")
     }
   },
   base: './', // 打包路径

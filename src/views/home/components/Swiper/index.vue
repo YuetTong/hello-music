@@ -19,6 +19,7 @@
 <script setup lang="ts" scoped>
 import { reactive } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
+// import { Pagination } from 'swiper';
 import { getBanner } from "../../../../network/request";
 import "swiper/css";
 

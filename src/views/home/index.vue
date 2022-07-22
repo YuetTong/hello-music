@@ -30,10 +30,10 @@
 <script setup lang="ts" scoped>
 import "./index.scss";
 import { reactive, computed } from "vue";
-import Swiper from "./components/Swiper/index.vue";
-import Card from "./components/Card/index.vue";
-import TitleCard from "./components/TitleCard/index.vue";
-import WideCard from "./components/WideCard/index.vue";
+import Swiper from "@views/home/components/Swiper/index.vue";
+import Card from "@views/home/components/Card/index.vue";
+import TitleCard from "@views/home/components/TitleCard/index.vue";
+import WideCard from "@views/home/components/WideCard/index.vue";
 
 import "swiper/css";
 import {
