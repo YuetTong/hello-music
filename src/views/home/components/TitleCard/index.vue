@@ -31,12 +31,12 @@
     </div>
   </div>
 </template>
-<script setup lang="ts" scoped>
-import { reactive } from "vue";
+<script setup lang='ts' scoped>
+import { reactive } from 'vue';
 const props = defineProps({
   title: {
     type: String,
-    default: "",
+    default: '',
   },
   list: {
     type: Array,
@@ -47,8 +47,8 @@ const props = defineProps({
 function adjustSongList(data) {
   return data.map((item) => {
     const newData = {
-      songName: item.song.album.name || "",
-      artist: item.song.album.company || "",
+      songName: item.song.album.name || '',
+      artist: item.song.album.company || '',
       picUrl: item.picUrl,
     };
     return newData;
@@ -57,5 +57,5 @@ function adjustSongList(data) {
 
 let state = reactive({ title: props.title, list: adjustSongList(props.list) });
 </script>
-<style scoped lang="scss" src="./index.scss">
+<style scoped lang='scss' src='./index.scss'>
 </style>

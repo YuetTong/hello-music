@@ -16,28 +16,28 @@
     </swiper>
   </div>
 </template>
-<script setup lang="ts" scoped>
-import { reactive } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
+<script setup lang='ts' scoped>
+import { reactive } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 // import { Pagination } from 'swiper';
-import { getBanner } from "../../../../network/request";
-import "swiper/css";
+import { getBanner } from '../../../../network/request';
+import 'swiper/css';
 
 const state = reactive({ banners: [] });
 
 async function init() {
   state.banners = await getBanner();
-  console.log("banners", state.banners);
+  console.log('banners', state.banners);
 }
 
 const onSwiper = (swiper) => {
   console.log(swiper);
 };
 const onSlideChange = () => {
-  console.log("slide change");
+  console.log('slide change');
 };
 
 init();
 </script>
-<style scoped lang="scss" src="./index.scss">
+<style scoped lang='scss' src='./index.scss'>
 </style>

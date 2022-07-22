@@ -17,17 +17,17 @@
         <p class="txt">
           {{ item.name }}
         </p>
-        <!-- <div class="txt">{{ item.name }}</div> -->
+        <!-- <div class='txt'>{{ item.name }}</div> -->
       </div>
     </div>
   </div>
 </template>
-<script setup lang="ts" scoped>
-import { reactive } from "vue";
+<script setup lang='ts' scoped>
+import { reactive } from 'vue';
 const props = defineProps({
   title: {
     type: String,
-    default: "",
+    default: '',
   },
   list: {
     type: Array,
@@ -37,5 +37,5 @@ const props = defineProps({
 
 let state: any = reactive({ title: props.title, list: props.list });
 </script>
-<style scoped lang="scss" src="./index.scss">
+<style scoped lang='scss' src='./index.scss'>
 </style>

@@ -27,27 +27,27 @@
     />
   </div>
 </template>
-<script setup lang="ts" scoped>
-import "./index.scss";
-import { reactive, computed } from "vue";
-import Swiper from "@views/home/components/Swiper/index.vue";
-import Card from "@views/home/components/Card/index.vue";
-import TitleCard from "@views/home/components/TitleCard/index.vue";
-import WideCard from "@views/home/components/WideCard/index.vue";
+<script setup lang='ts' scoped>
+import './index.scss';
+import { reactive, computed } from 'vue';
+import Swiper from '@views/home/components/Swiper/index.vue';
+import Card from '@views/home/components/Card/index.vue';
+import TitleCard from '@views/home/components/TitleCard/index.vue';
+import WideCard from '@views/home/components/WideCard/index.vue';
 
-import "swiper/css";
+import 'swiper/css';
 import {
   getPrivateContent,
   getPersonalized,
   getDjprogramt,
   getNewsong,
-} from "../../network/request";
+} from '../../network/request';
 
 let state = reactive({
-  privateContent: { privateContentList: [], title: "" },
-  personlized: { personlizedList: [], title: "推荐歌单" },
-  recommend: { recommendList: [], title: "独家放送2.0" },
-  newSong: { songList: [], title: "最新音乐" },
+  privateContent: { privateContentList: [], title: '' },
+  personlized: { personlizedList: [], title: '推荐歌单' },
+  recommend: { recommendList: [], title: '独家放送2.0' },
+  newSong: { songList: [], title: '最新音乐' },
 });
 
 async function getPrivate() {
