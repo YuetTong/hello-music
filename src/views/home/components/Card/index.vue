@@ -14,16 +14,19 @@
           class="list-img"
           :src="item.picUrl"
         >
-        <p class="txt">
+        <div class="count">
+          <p>{{ toTenThousand(item.playCount) }}</p>
+        </div>
+        <div class="txt">
           {{ item.name }}
-        </p>
-        <!-- <div class='txt'>{{ item.name }}</div> -->
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script setup lang='ts' scoped>
 import { reactive } from 'vue';
+import {toTenThousand} from '@/utils/helper.js'
 const props = defineProps({
   title: {
     type: String,
