@@ -1,7 +1,7 @@
 <template>
   <div class="personalized">
     <div class="title">
-      <p>{{ state.title }}</p>
+      <div>{{ state.title }}</div>
       <div class="arrow-right" />
     </div>
     <div class="container">
@@ -14,8 +14,12 @@
           class="list-img"
           :src="item.picUrl"
         >
-        <div class="count">
-          <p>{{ toTenThousand(item.playCount) }}</p>
+        <div
+          v-if="state.showCount"
+          class="count"
+        >
+          <div class="playbtn" />
+          <div>{{ toTenThousand(item.playCount) }}</div>
         </div>
         <div class="txt">
           {{ item.name }}
@@ -36,9 +40,13 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  showCount: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-let state: any = reactive({ title: props.title, list: props.list });
+let state: any = reactive({ title: props.title, list: props.list, showCount:props.showCount });
 </script>
 <style scoped lang='scss' src='./index.scss'>
 </style>

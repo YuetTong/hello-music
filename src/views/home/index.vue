@@ -6,12 +6,14 @@
       class="first-section"
       :title="state.personlized.title"
       :list="state.personlized.personlizedList"
+      :show-count="true"
     />
     <!-- 独家放送 接口返回name -->
     <Card
       v-if="showPrivate"
       :title="state.privateContent.title"
       :list="state.privateContent.privateContentList"
+      :show-count="false"
     />
     <!-- 独家放送 接口返回数据近似 -->
     <WideCard

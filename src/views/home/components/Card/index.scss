@@ -2,9 +2,10 @@
     margin-top: 40px;
     .title {
         display: flex;
+        align-items: center;
         .arrow-right {
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             background: url("../../../../assets/fonts/arrow-right.png") no-repeat;
             background-size: cover;
         }
@@ -22,6 +23,16 @@
                 right:0;
                 top:0;
                 color:white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .playbtn {
+                    width: 10px;
+                    height: 10px;
+                    background: url("../../../../assets/play-white.png") no-repeat;
+                    background-size: cover;  
+                    margin-right: 5px;      
+                }
             }
             .list-img {
                 width: 100%;
@@ -35,6 +46,11 @@
             }
             .txt {
                 text-align: left;
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
         }        
     }

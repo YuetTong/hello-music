@@ -9,8 +9,12 @@
       @swiper="onSwiper"
       @slide-change="onSlideChange"
     >
-      <swiper-slide v-for="(slideContent, index) in state.banners" :key="index">
-        <img :src="slideContent.imageUrl" />
+      <swiper-slide
+        v-for="(slideContent, index) in state.banners"
+        :key="index"
+      >
+        <!-- <img :src="slideContent.imageUrl" /> -->
+        <img v-lazy="slideContent.imageUrl">
       </swiper-slide>
     </swiper>
   </div>
