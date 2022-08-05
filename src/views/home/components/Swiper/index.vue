@@ -13,8 +13,10 @@
         v-for="(slideContent, index) in state.banners"
         :key="index"
       >
-        <!-- <img :src="slideContent.imageUrl" /> -->
-        <img v-lazy="slideContent.imageUrl">
+        <!-- <div class="fiximg">
+          <img v-lazy="slideContent.imageUrl">
+        </div> -->
+        <img :src="slideContent.imageUrl">
       </swiper-slide>
     </swiper>
   </div>

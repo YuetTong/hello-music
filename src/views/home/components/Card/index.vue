@@ -10,10 +10,12 @@
         :key="index"
         class="list-item"
       >
-        <img
-          class="list-img"
-          :src="item.picUrl"
-        >
+        <div class="fiximg">
+          <img
+            v-lazy="item.picUrl"
+            class="list-img"
+          >
+        </div>
         <div
           v-if="state.showCount"
           class="count"

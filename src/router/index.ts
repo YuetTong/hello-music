@@ -16,12 +16,30 @@ const routes: Array<RouteRecordRaw> = [
     }
   },
   {
+    path: '/musicList',
+    name: 'musicList',
+    component: () => import("@/views/musicList/index.vue"),
+    alias: '/musicList',
+    meta: {
+      title: 'musicList'
+    }
+  },
+  {
     path: '/register',
     name: 'register',
     component: () => import("@/views/register/index.vue"),
     alias: '/register',
     meta: {
       title: '注册'
+    }
+  },
+  {
+    path: '/loginQR',
+    name: 'loginQR',
+    component: () => import("@/views/loginQR/index.vue"),
+    alias: '/loginQR',
+    meta: {
+      title: '二维码登录'
     }
   },
   {

@@ -52,6 +52,15 @@ export async function getLogin(phoneNum, pw) {
   }
 }
 
+export async function getQRKey() {
+  try {
+    const res: any = await axios.get('/login/qr/key');
+    return res.data.data.unikey
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export async function getUserAcct() {
   try {
     const res: any = await axios.get("/user/account");
@@ -139,10 +148,18 @@ export async function getDjprogramt() {
   }
 }
 
-
 export async function getNewsong() {
   try {
     const res: any = await axios.get("/personalized/newsong");
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getRecommendsong() {
+  try {
+    const res: any = await axios.get("/recommend/songs");
     return res.data;
   } catch (error) {
     console.error(error);
