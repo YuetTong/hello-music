@@ -22,9 +22,16 @@ export async function getPlaylist() {
 
 export async function getCaptcha(phone) {
   try {
-    const response = await axios.get(`/captcha/sent?phone=${phone}`);
-    console.log("getCaptcha");
-    console.log(response);
+    await axios.get(`/captcha/sent?phone=${phone}`);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+export async function getLoginStatus() {
+  try {
+    await axios.get(`/login/status`);
   } catch (error) {
     console.error(error);
   }
@@ -42,9 +49,9 @@ export async function getRegister(phoneNum, pw, captcha) {
   }
 }
 
-export async function getLogin(phoneNum, pw) {
+export async function getLogin(phoneNum, pw, captcha) {
   try {
-    const response = await axios.get(`login/cellphone?phone=${phoneNum}&password=${pw}`);
+    const response = await axios.get(`login/cellphone?phone=${phoneNum}&captcha=${captcha}&password=${pw}`);
     console.log("getLogin");
     console.log(response);
   } catch (error) {
@@ -56,6 +63,16 @@ export async function getQRKey() {
   try {
     const res: any = await axios.get('/login/qr/key');
     return res.data.data.unikey
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getCreateQR(key) {
+  try {
+    const res: any = await axios.get(`/login/qr/create?key=${key}`);
+    return res.data.data.qrurl
+    // return res.data.data.unikey
   } catch (error) {
     console.error(error);
   }
@@ -160,7 +177,7 @@ export async function getNewsong() {
 export async function getRecommendsong() {
   try {
     const res: any = await axios.get("/recommend/songs");
-    return res.data;
+    return res.data.data;
   } catch (error) {
     console.error(error);
   }

@@ -20,11 +20,23 @@
       >
         <a-input v-model:value="formState.username" />
       </a-form-item>
-
+      <a-form-item
+        label="Captcha"
+        name="captcha"
+        :rules="[{ message: 'Please input your captcha!' }]"
+      >
+        <a-input-password v-model:value="formState.captcha" />        
+        <button
+          style="float:right"
+          @click="getCaptcha(formState.username)"
+        >
+          获取验证码
+        </button>  
+      </a-form-item>
       <a-form-item
         label="Password"
         name="password"
-        :rules="[{ required: true, message: 'Please input your password!' }]"
+        :rules="[{ message: 'Please input your password!' }]"
       >
         <a-input-password v-model:value="formState.password" />
       </a-form-item>
@@ -52,24 +64,26 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
-import { getLogin } from "../../network/request";
+import { getLogin,getCaptcha } from "../../network/request";
 
 interface IAccount {
   username: string;
   password: string;
+  captcha: number;
   remember?: boolean;
 }
 
 const initAccount: IAccount = {
   username: "13802929226",
   password: "123456",
+  captcha: null,
   remember: true,
 };
 const formState = reactive({ ...initAccount });
 
 const onFinish = (values: any): void => {
   console.log("Success:", values);
-  getLogin(values.username, values.password);
+  getLogin(values.username, values.password, values.captcha);
 };
 
 const onFinishFailed = (errorInfo: String): any => {
