@@ -4,3 +4,26 @@
 .first-section {
     margin-top: 50px;
 }
+.operation {
+    display: flex;
+    align-items: center;
+    .unlike {
+        width: 15px;
+        height: 15px;
+        background: url("../../assets/heart.png") no-repeat;
+        background-size: cover;
+    }
+    .like {
+        width: 15px;
+        height: 15px;
+        background: url("../../assets/heart-fill.png") no-repeat;
+        background-size: cover;
+    }
+    .download {
+        margin-left: 20px;
+        width: 15px;
+        height: 15px;
+        background: url("../../assets/download.png") no-repeat;
+        background-size: cover;
+    }
+}
