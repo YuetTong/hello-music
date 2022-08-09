@@ -60,6 +60,15 @@ const routes: Array<RouteRecordRaw> = [
       title: 'Demo'
     }
   },
+  {
+    path: '/EditableTable',
+    name: 'demo',
+    component: () => import("@/views/EditableTable/index.vue"),
+    alias: '/EditableTable',
+    meta: {
+      title: 'EditableTable'
+    }
+  },
 ];
 const router = createRouter({
   history: createWebHashHistory(),
