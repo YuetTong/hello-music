@@ -14,6 +14,7 @@
         fixed
         prop="name"
         label="用户名"
+        min-width="20%"
       >
         <template #default="{row,$index}">
           <el-form-item
@@ -32,6 +33,7 @@
       <el-table-column
         prop="phone"
         label="用户手机号码"
+        min-width="30%"
       >
         <template #default="{row,$index}">
           <el-form-item
@@ -50,6 +52,7 @@
       <el-table-column
         prop="gender"
         label="用户性别"
+        min-width="20%"
       >
         <template #default="{row,$index}">
           <el-form-item
@@ -75,7 +78,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        
+        min-width="20%"
         fixed="right"
         label="操作"
         :show-overflow-tooltip="false"

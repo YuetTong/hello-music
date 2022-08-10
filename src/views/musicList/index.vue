@@ -6,32 +6,34 @@
   >
     <el-table-column
       prop="order"
-      width="80"
+      min-width="80"
     />
     <el-table-column
       label=""
-      width="180"
+      min-width="180"
     >
       <template #default="{row}">
-        <!-- :class="['common-modal-title', `common-modal-title-${titleClass}`] -->
         <div class="operation">
-          <!-- <div :class=" row.isLike ? 'like':'unlike' " /> -->
           <div
-            :class="['unlike', row.isLike ? 'like':'']"
+            :class="['unlike', row.isLike ? 'like':'']" 
+            @click="toogleLike(row)"
           />
-          <div class="download" />
+          <div
+            class="download"
+            @click="download(row)"
+          />
         </div>
       </template>
     </el-table-column>
     <el-table-column
       prop="name"
       label="音乐标题"
-      width="180"
+      min-width="180"
     />
     <el-table-column
       prop="artist"
       label="歌手"
-      width="180"
+      min-width="180"
     />
     <el-table-column
       prop="album"
@@ -61,6 +63,15 @@ async function getRecSong() {
 
 async function init() {
   getRecSong();
+}
+
+function toogleLike(row) {
+  row.isLike = !row.isLike
+}
+
+function download(row) {
+  console.log('⬇️')
+  console.log(row)  
 }
 
 init();
